@@ -1,0 +1,15 @@
+:host {
+  // width: 200px;
+}
+.photo-card {
+    & img {
+      height: 300px;
+      object-fit: scale-down;
+      background: #333;
+    }
+  }
+  
+  .photo-header-image {
+    background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+    background-size: cover;
+  }

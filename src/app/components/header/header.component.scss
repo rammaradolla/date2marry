@@ -1,0 +1,13 @@
+@import '../../../theme.scss';
+.header {
+    height:60px;
+    background: $primary;
+}
+.logo {
+    font-family: 'Marck Script', cursive;
+    font-size: 2rem;
+    color: #fff;
+    .to{
+        color:red;
+    }
+}
