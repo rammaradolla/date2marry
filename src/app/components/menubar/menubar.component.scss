@@ -1,0 +1,18 @@
+@import '../../../theme.scss';
+.menubar {
+    display: grid;
+    grid-template-columns: repeat(12, auto);
+    grid-template-rows:1; 
+    justify-content: start;
+    a {
+        height: 15px;
+        line-height: 15px;
+        font-size: 15px;
+        padding: 28px 16px 12px;
+        text-decoration: none;
+        color: #777;
+        &.active {
+            border-bottom: 2px solid $primary;
+        }
+    }
+}

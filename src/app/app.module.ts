@@ -7,8 +7,10 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { MaterialModule } from './shared/material.module';
 import { HeaderComponent } from './components/header/header.component';
-import { PageContainerComponent } from './components/page-container/page-container.component';
+import { LandingPageComponent } from './components/landing-page/landing-page.component';
 import { PhotoCardComponent } from './components/photo-card/photo-card.component';
+import { TestComponent } from './test/test.component';
+import { MenubarComponent } from './components/menubar/menubar.component';
 
 
 
@@ -16,8 +18,10 @@ import { PhotoCardComponent } from './components/photo-card/photo-card.component
   declarations: [
     AppComponent,
     HeaderComponent,
-    PageContainerComponent,
-    PhotoCardComponent
+    LandingPageComponent,
+    PhotoCardComponent,
+    TestComponent,
+    MenubarComponent
   ],
   imports: [
     BrowserModule,

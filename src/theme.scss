@@ -15,11 +15,13 @@
 $brand-editor-primary: mat-palette($mat-purple);
 $brand-editor-accent: mat-palette($mat-lime,  A400);
 $brand-editor-warn: mat-palette($mat-red);
+$brand-editor-gray: mat-palette($mat-gray, 200);
 
 // Create your Sass color vars (will be available in all the project)
 $primary: mat-color($brand-editor-primary);
 $accent: mat-color($brand-editor-accent);
 $warn: mat-color($brand-editor-warn);
+$gray: mat-color($brand-editor-gray);
 
 $brand-editor-light-theme: mat-light-theme($brand-editor-primary, $brand-editor-accent, $brand-editor-warn);
 

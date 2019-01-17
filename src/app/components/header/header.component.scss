@@ -1,13 +1,30 @@
 @import '../../../theme.scss';
+
+
+
 .header {
-    height:60px;
-    background: $primary;
-}
-.logo {
-    font-family: 'Marck Script', cursive;
-    font-size: 2rem;
-    color: #fff;
-    .to{
-        color:red;
+    height:90px;
+    background: #fafafa;
+    border-bottom:1px solid #ebebeb;
+    display:grid;
+    grid-template-columns: repeat(24, auto);
+    grid-template-rows: repeat(6, auto);
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom:10px;
+    .logo {
+        grid-column:2/6;
+        grid-row:1/7;
+        font-family: 'Marck Script', cursive;
+        font-size: 2.5rem;
+        color: $primary;
+        .to{
+            color:red;
+        }
+        
+    }
+    .memubar-component {
+        grid-column: 6/20;
+        grid-row:6/7;
     }
 }
