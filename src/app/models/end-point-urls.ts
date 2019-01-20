@@ -1,3 +1,5 @@
 export class EndPointUrls {
-    sampleEndPointUrl:string;
+    lady:string;
+    man:string;
+    user:string;
 }

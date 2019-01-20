@@ -11,34 +11,12 @@ import { EndPointUrls } from '../models/end-point-urls';
   providedIn: 'root'
 })
 export class ConstantsService {
-  constructor(private httpClient: HttpClient, private messageService: MessageService) { }
+  constructor() { }
 
-  getBrandNames(): Observable<{}> {
-    return this.httpClient.get<{}>(this.getEndPointUrls().sampleEndPointUrl)
-      .pipe(
-        tap(data => console.log('List of Brand Names', data)),
-        catchError(this.handleError('data', {}))
-      );
-  }
+  /* Labels */
+  OK_BUTTON_LABEL = 'Ok';
 
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.log(`${operation} failed`, error.status, 'serverError');
-      // Let the app keep running by returning an empty result.
-      return of(result as T);
-    };
-  }
 
-  getEndPointUrls(): EndPointUrls {
-    const endPointUrls: EndPointUrls = new EndPointUrls;
-    const baseURL = window.location.origin;
-    if (baseURL.indexOf('localhost') > -1) {
-      endPointUrls.sampleEndPointUrl = 'http://localhost:3000/componentJsonSchema';
-      return endPointUrls;
-    } else {
-      endPointUrls.sampleEndPointUrl = '';
-      return endPointUrls;
-    }
-  }
-
+// Messages
+ARE_YOU_SURE = `Are you sure?`;
 }

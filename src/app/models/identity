@@ -1,0 +1,5 @@
+ export class Identity {
+        id: string;
+        email: string;
+        roles: string[];
+    }

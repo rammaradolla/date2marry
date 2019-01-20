@@ -11,6 +11,9 @@ import { LandingPageComponent } from './components/landing-page/landing-page.com
 import { PhotoCardComponent } from './components/photo-card/photo-card.component';
 import { TestComponent } from './test/test.component';
 import { MenubarComponent } from './components/menubar/menubar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 
@@ -28,7 +31,10 @@ import { MenubarComponent } from './components/menubar/menubar.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
