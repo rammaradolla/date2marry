@@ -36,11 +36,14 @@ export class ApiCallingService {
       endPointUrls.lady = 'http://localhost:3000/lady';
       endPointUrls.man = 'http://localhost:3000/man';
       endPointUrls.user = 'http://localhost:3000/users/{{userid}}';
+      endPointUrls.getUserPhotoIds = 'http://localhost:3000/getUserPhotoIds';
       return endPointUrls;
     } else {
       endPointUrls.lady = 'https://api.anastasiadate.com/v2/smiles/lady';
       endPointUrls.man = 'https://api.anastasiadate.com/v2/smiles/man';
       endPointUrls.user = 'https://cp.anastasiadate.com/users/{{userid}}';
+      endPointUrls.getUserPhotoIds = 'https://api6.anastasiadate.com/v2/ladies/1950455/photos';
+      //photo's url  https://api6.anastasiadate.com/v2/ladies/1950455/photos/54ca0d3baa94.316x450.gallery
       return endPointUrls;
     }
   }
