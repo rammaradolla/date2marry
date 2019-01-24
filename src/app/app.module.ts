@@ -13,7 +13,8 @@ import { TestComponent } from './test/test.component';
 import { MenubarComponent } from './components/menubar/menubar.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
-import {SlideshowModule} from 'ng-simple-slideshow';
+import { SlideshowModule } from 'ng-simple-slideshow';
+
 
 
 

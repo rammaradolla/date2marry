@@ -4,7 +4,34 @@
       <mat-card-title>Shiba Inu</mat-card-title>
       <mat-card-subtitle>Dog Breed</mat-card-subtitle>
     </mat-card-header>
-    <img mat-card-image [src]="photoUrl" alt="Photo of a Shiba Inu">
+    <!-- <img mat-card-image [src]="photoUrl" alt="Photo of a Shiba Inu"> -->
+    <!-- <slideshow #slideshow [imageUrls]="imageUrlArray"></slideshow> -->
+    
+    <slideshow #slideshow 
+      [imageUrls]="imageUrls"
+      [height]="height"
+      [minHeight]="minHeight"
+      [arrowSize]="arrowSize"
+      [showArrows]="showArrows"
+      [disableSwiping]="disableSwiping"
+      [autoPlay]="autoPlay"
+      [stopAutoPlayOnSlide]="stopAutoPlayOnSlide"
+      [debug]="debug"
+      [backgroundSize]="backgroundSize"
+      [backgroundPosition]="backgroundPosition"
+      [backgroundRepeat]="backgroundRepeat"
+      [showDots]="showDots"
+      [dotColor]="dotColor"
+      [showCaptions]="showCaptions"
+      [captionColor]="captionColor"
+      [captionBackground]="captionBackground"
+      [lazyLoad]="lazyLoad"
+      [hideOnNoSlides]="hideOnNoSlides"
+      (onSlideLeft)="onSlide($event)"
+      (onSlideRight)="onSlide($event)"
+      (onSwipeLeft)="onSlide($event)"
+      (onSwipeRight)="onSlide($event)">
+    </slideshow>
     <mat-card-content>
       <p>
         The Shiba 
@@ -15,3 +42,4 @@
       <button mat-button>SHARE</button>
     </mat-card-actions>
   </mat-card>
+  
