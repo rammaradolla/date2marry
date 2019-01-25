@@ -1,5 +1,8 @@
 import { Component, OnInit, Input, ViewChild } from '@angular/core';
 import { IImage } from 'ng-simple-slideshow';
+import { AppStateService } from '../../services/app-state.service';
+import { ApiCallingService } from '../../services/api-calling.service';
+import { UserProfile } from '../../models/userProfile';
 
 @Component({
   selector: 'app-photo-card',
@@ -9,7 +12,7 @@ import { IImage } from 'ng-simple-slideshow';
 
 export class PhotoCardComponent implements OnInit {
 
-  constructor() { }
+  constructor(private apiCallingService:ApiCallingService, private appStateService: AppStateService) { }
   @Input() photoUrl: String;
   @ViewChild('slideshow') slideshow: any;
   imageUrls: (string | IImage)[] = [
@@ -40,6 +43,7 @@ export class PhotoCardComponent implements OnInit {
   hideOnNoSlides: boolean = false;
   width: string = '100%';
   ngOnInit() {
+
   }
 
   onSlide(photoIndex) {

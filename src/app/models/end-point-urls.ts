@@ -1,6 +1,5 @@
 export class EndPointUrls {
-    lady:string;
-    man:string;
-    user:string;
+    users:string;
+    usersFullProfile:string;
     getUserPhotoIds:string;
 }
