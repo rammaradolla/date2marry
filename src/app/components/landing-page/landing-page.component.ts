@@ -11,7 +11,7 @@ import { UserProfile } from '../../models/userProfile';
   styleUrls: ['./landing-page.component.scss']
 })
 export class LandingPageComponent implements OnInit {
-
+  usersProfile: UserProfile[];
   constructor(private apiCallingService:ApiCallingService, private appStateService: AppStateService) { }
 
   ngOnInit() {
@@ -30,7 +30,7 @@ export class LandingPageComponent implements OnInit {
     this.apiCallingService.getFullProfiles()
     .subscribe((usersProfile:UserProfile[]) => {
       this.appStateService.usersProfile = usersProfile;
-      console.log(this.appStateService.usersProfile);
+      this.usersProfile = this.appStateService.usersProfile;
     })
   }
 
