@@ -1,0 +1,90 @@
+<div class="create-account-page">
+  <mat-card class="create-account-card">
+    <app-logo class="logo"></app-logo>
+    <mat-card-title class="create-account-title">{{
+      constantsService.titles?.createAccountCardTitle
+    }}
+    <mat-divider></mat-divider>
+  </mat-card-title>
+   
+    <!-- <mat-card-content> -->
+        <div [formGroup]="createAccountForm">
+            <div>
+              <mat-form-field appearance="outline">
+                  <mat-label>{{ constantsService.labels?.iama }}</mat-label>
+                  <mat-select>
+                      <mat-option *ngFor="let iam of constantsService.dropdown.iama" [value]="iam">
+                        {{iam}}
+                      </mat-option>
+                    </mat-select>
+                <mat-error *ngIf="createAccountForm.controls.iama.errors?.required">{{
+                  constantsService.errorMessages.required?.iama
+                }}</mat-error>
+              </mat-form-field>
+            </div>
+      
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>{{ constantsService.labels?.firstName }}</mat-label>
+                <input
+                  matInput
+                  placeholder="FirstName"
+                  formControlName="firstName"
+                  required
+                />
+                <mat-error
+                  *ngIf="createAccountForm.controls.firstName.errors?.required"
+                  >{{ constantsService.errorMessages.required?.firstName }}</mat-error
+                >
+              </mat-form-field>
+            </div>
+      
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>{{ constantsService.labels?.lastName }}</mat-label>
+                <input
+                  matInput
+                  placeholder="LastName"
+                  formControlName="lastName"
+                  required
+                />
+                <mat-error
+                  *ngIf="createAccountForm.controls.lastName.errors?.required"
+                  >{{ constantsService.errorMessages.required?.lastName }}</mat-error
+                >
+              </mat-form-field>
+            </div>
+      
+            <div>
+              <mat-form-field appearance="outline">
+                <mat-label>{{ constantsService.labels?.password }}</mat-label>
+                <input
+                  matInput
+                  placeholder="Password"
+                  formControlName="password"
+                  required
+                />
+                <mat-error
+                  *ngIf="createAccountForm.controls.password.errors?.required"
+                  >{{ constantsService.errorMessages.required?.password }}</mat-error
+                >
+              </mat-form-field>
+            </div>
+            </div>
+    <!-- </mat-card-content> -->
+
+    <mat-card-actions>
+      <button mat-raised-button color="primary" class="crate-account-btn" (click)="createAccount()">
+        {{ constantsService.labels?.createAccountSubmitBtn }}
+      </button>
+      <mat-label>Already have an account?<button mat-button color="primary">Sign In</button></mat-label>
+    </mat-card-actions>
+  </mat-card>
+
+  <div class="signin-btn-section">
+      <button mat-button>Need help? Contact Us?</button>
+      <button mat-raised-button color="primary" class="crate-account-btn" routerLink="/home" (click)="createAccount()">
+          Sign In
+        </button>
+    </div>
+</div>

@@ -12,11 +12,31 @@ import { EndPointUrls } from '../models/end-point-urls';
 })
 export class ConstantsService {
   constructor() { }
-
+  
+  /* Titles */
+  titles = {
+    createAccountCardTitle: 'JOIN THE SECURE & EASY WAY'
+  }
   /* Labels */
-  OK_BUTTON_LABEL = 'Ok';
-
-
-// Messages
-ARE_YOU_SURE = `Are you sure?`;
+  labels = {
+      iama:'I\'m a',
+      firstName: 'First Name',
+      lastName: 'Last Name',
+      password: 'Password',
+      createAccountSubmitBtn: 'FIND YOUR MATCHES',
+  };
+ 
+/* Dropdown values */
+dropdown = {
+  iama: ['Man Seeking a Woman', 'Woman Seeking a Man']
+}
+/* Error Messages */
+  errorMessages = {
+     required: {
+      iama:'lease select your gender',
+      firstName: 'Please enter first name',
+      lastName: 'Please enter last name',
+      password: 'Please enter password'
+     }
+  };
 }
