@@ -8,7 +8,7 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "mockServer": "json-server src/app/mocks/db.json",
+    "mock": "json-server src/app/mocks/db.json",
     "compodoc": "npx compodoc -p src/tsconfig.app.json -w -s"
   },
   "private": true,
