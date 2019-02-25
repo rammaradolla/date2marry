@@ -11,7 +11,9 @@ body {
   font-weight: 400;
   color:#777;
  }
-
+ .memubar-component {
+  box-sizing: initial;
+}
 /*scroll bar styles*/
 /* width */
 ::-webkit-scrollbar {

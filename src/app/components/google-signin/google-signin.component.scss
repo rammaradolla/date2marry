@@ -1,0 +1,11 @@
+.google-signin-section {
+    display:grid;
+    margin-top:20px;
+    .google-signin-btn {
+        //background: url('./btn_google_signin_light_pressed_web@2x.png') no-repeat;
+        width:200px;
+        padding:0;
+        font-size: 1.1rem;
+        justify-self: center;
+    }
+}

@@ -17,8 +17,26 @@ import { SlideshowModule } from 'ng-simple-slideshow';
 import { CreateAccountComponent } from './components/create-account/create-account.component';
 import { LogoComponent } from './components/logo/logo.component';
 
+import {
+  SocialLoginModule,
+  AuthServiceConfig,
+  GoogleLoginProvider,
+  FacebookLoginProvider,
+} from "angular-6-social-login";
+import { GoogleSigninComponent } from './components/google-signin/google-signin.component';
 
 
+// Configs 
+export function getAuthServiceConfigs() {
+  let config = new AuthServiceConfig(
+      [
+        {
+          id: GoogleLoginProvider.PROVIDER_ID,
+          provider: new GoogleLoginProvider("1009303169908-f6kme6oifcog0o5r90fa5rcv0sdjaruq.apps.googleusercontent.com")
+        }
+      ]);
+  return config;
+}
 
 
 @NgModule({
@@ -30,7 +48,8 @@ import { LogoComponent } from './components/logo/logo.component';
     TestComponent,
     MenubarComponent,
     CreateAccountComponent,
-    LogoComponent
+    LogoComponent,
+    GoogleSigninComponent
   ],
   imports: [
     BrowserModule,
@@ -41,9 +60,15 @@ import { LogoComponent } from './components/logo/logo.component';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
-    SlideshowModule
+    SlideshowModule,
+    SocialLoginModule
   ],
-  providers: [],
+  providers: [
+    {
+      provide: AuthServiceConfig,
+      useFactory: getAuthServiceConfigs
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

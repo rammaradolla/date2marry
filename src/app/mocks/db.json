@@ -741,6 +741,20 @@
           "aba07930a334",
           "602d3664582d",
           "eb7cb29e312c"
-        ]
+        ],
+        "newUser": {
+          "legacy": {
+            "subreferrer": "",
+            "referrer": "",
+            "extra-info": "source=index&afid=&subafid=&current-language=&transaction-id=&offer-id="
+          },
+          "current-language": "",
+          "firstname": "zxvzx",
+          "email": "ra@gmail.com",
+          "password": "MSRhasfhd1",
+          "birthdate": "/Date(224380800000)/",
+          "lastname": "",
+          "gender": "male"
+        }
     
 }

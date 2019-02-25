@@ -4,7 +4,7 @@
     height:100vh;
     display: grid;
     grid-template-columns: 100px 382px auto 280px;
-    grid-template-rows: auto 600px auto;
+    grid-template-rows: auto 650px auto;
     background-image: url("/assets/create-account/1.jpeg");
     background-repeat:no-repeat;
     background-position: center;
@@ -16,7 +16,7 @@
         grid-column-end: 3;
         grid-row-start: 2;
         grid-row-end: 3;
-        height:600px;
+        height:650px;
         width:350px;
         display: grid;
         .logo {
