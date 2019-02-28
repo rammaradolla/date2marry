@@ -5,12 +5,19 @@
     display: grid;
     grid-template-columns: 100px 382px auto 280px;
     grid-template-rows: auto 650px auto;
-    background-image: url("/assets/create-account/1.jpeg");
-    background-repeat:no-repeat;
-    background-position: center;
-    background-attachment: fixed;
-    background-size: cover;
+    //background-image: url("/assets/create-account/1.jpeg");
+    //background-repeat:no-repeat;
+    //background-position: center;
+    //background-attachment: fixed;
+    //background-size: cover;
     background-color: #cccccc;
+
+    background: url("/assets/create-account/1.jpeg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+
     .create-account-card {
         grid-column-start: 2;
         grid-column-end: 3;

@@ -755,6 +755,90 @@
           "birthdate": "/Date(224380800000)/",
           "lastname": "",
           "gender": "male"
-        }
-    
+        },
+"userSave": {
+  "age": 0,
+  "agentId": "string",
+  "dateOfBirth": "2019-02-26T06:14:55.078Z",
+  "email": "string",
+  "female": true,
+  "firstName": "string",
+  "id": "string",
+  "lastName": "string",
+  "middleName": "string",
+  "mobileNumber": "string",
+  "name": "string",
+  "online": true,
+  "password": "string",
+  "profilePicLargeUrl": "string",
+  "profilePicSmallUrl": "string",
+  "userAccount": {
+    "businessType": "CASUAL",
+    "credits": 0,
+    "enabled": true,
+    "pictureList": [
+      {
+        "id": "string",
+        "isActive": true,
+        "isOnRequest": true,
+        "isPublic": true,
+        "mediaType": "PIC",
+        "url": "string",
+        "userId": "string"
+      }
+    ],
+    "videoList": [
+      {
+        "id": "string",
+        "isActive": true,
+        "isOnRequest": true,
+        "isPublic": true,
+        "mediaType": "PIC",
+        "url": "string",
+        "userId": "string"
+      }
+    ]
+  },
+  "userName": "string",
+  "userProfile": {
+    "aboutYourself": "string",
+    "childList": [
+      {
+        "age": 0,
+        "dateOfBirth": "2019-02-26T06:14:55.078Z",
+        "id": "string",
+        "isFemale": true
+      }
+    ],
+    "drinkingType": "NEVER",
+    "education": "UNIVERSIRY",
+    "eyeColor": "string",
+    "firstLanguage": {
+      "country": {
+        "id": "string",
+        "name": "string",
+        "shortName": "string"
+      },
+      "id": "string",
+      "name": "string"
+    },
+    "hairColor": "string",
+    "height": 0,
+    "hobbies": "string",
+    "isSmoker": true,
+    "maritalStatus": "SINGLE",
+    "profession": "string",
+    "secondLanguage": {
+      "country": {
+        "id": "string",
+        "name": "string",
+        "shortName": "string"
+      },
+      "id": "string",
+      "name": "string"
+    },
+    "userId": "string",
+    "weight": 0
+  }
+}
 }

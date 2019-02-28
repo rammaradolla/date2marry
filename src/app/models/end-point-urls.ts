@@ -1,5 +1,6 @@
 export class EndPointUrls {
-    users:string;
-    usersFullProfile:string;
-    getUserPhotoIds:string;
+  users: string;
+  usersFullProfile: string;
+  getUserPhotoIds: string;
+  userSave: string;
 }

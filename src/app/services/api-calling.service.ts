@@ -6,11 +6,19 @@ import { catchError, map, tap, retry } from "rxjs/operators";
 import { MessageService } from "./message.service";
 import { EndPointUrls } from "../models/end-point-urls";
 import { LoggingService } from "./logging.service";
+import { User } from "../models/userModel";
 
 @Injectable({
   providedIn: "root"
 })
 export class ApiCallingService {
+  basicHttpOptions = {
+    headers: new HttpHeaders({
+      "Content-Type": "application/json; charset=utf-8",
+      Accept: "application/json",
+      "Access-Control-Allow-Origin": "localhost:4200"
+    })
+  };
   constructor(
     private httpClient: HttpClient,
     private messageService: MessageService,
@@ -27,6 +35,7 @@ export class ApiCallingService {
       endPointUrls.users = "http://localhost:3000/users";
       endPointUrls.usersFullProfile = "http://localhost:3000/usersFullProfile";
       endPointUrls.getUserPhotoIds = "http://localhost:3000/getUserPhotoIds";
+      endPointUrls.userSave = "http://localhost:8082/user/save";
       return endPointUrls;
     } else {
       endPointUrls.users = "https://api.anastasiadate.com/v2/smiles/users";
@@ -34,7 +43,7 @@ export class ApiCallingService {
         "https://cp.anastasiadate.com/usersFullProfile";
       endPointUrls.getUserPhotoIds =
         "https://api6.anastasiadate.com/v2/ladies/1950455/photos";
-      //photo's url  https://api6.anastasiadate.com/v2/ladies/1950455/photos/54ca0d3baa94.316x450.gallery
+      endPointUrls.userSave = "http://localhost:8082/user/save";
       return endPointUrls;
     }
   }
@@ -65,6 +74,18 @@ export class ApiCallingService {
     return this.httpClient
       .get<{}>(this.getEndPointUrls().getUserPhotoIds)
       .pipe(catchError(this.handleError("data", {})));
+  }
+
+  /**
+   * Function to create, save and update user
+   */
+  saveUser(user): Observable<{}> {
+    return this.httpClient
+      .post<{}>(this.getEndPointUrls().userSave, user, this.basicHttpOptions)
+      .pipe(
+        tap(response => console.log("user save response", response)),
+        catchError(this.handleError("data", {}))
+      );
   }
 
   /**
