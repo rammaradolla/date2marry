@@ -21,8 +21,10 @@ export class ConstantsService {
     iama: "I'm a",
     firstName: "First Name",
     lastName: "Last Name",
+    userName: "UserName",
     password: "Password",
-    createAccountSubmitBtn: "FIND YOUR MATCHES"
+    createAccountSubmitBtn: "FIND YOUR MATCHES",
+    signinBtn: "SIGN IN"
   };
 
   /* Dropdown values */
@@ -35,6 +37,7 @@ export class ConstantsService {
       iama: "lease select your gender",
       firstName: "Please enter first name",
       lastName: "Please enter last name",
+      userName: "Please enter username",
       password: "Please enter password"
     }
   };

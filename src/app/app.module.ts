@@ -24,6 +24,7 @@ import {
   FacebookLoginProvider,
 } from "angular-6-social-login";
 import { GoogleSigninComponent } from './components/google-signin/google-signin.component';
+import { SigninComponent } from './components/signin/signin.component';
 
 
 // Configs 
@@ -49,7 +50,8 @@ export function getAuthServiceConfigs() {
     MenubarComponent,
     CreateAccountComponent,
     LogoComponent,
-    GoogleSigninComponent
+    GoogleSigninComponent,
+    SigninComponent
   ],
   imports: [
     BrowserModule,
