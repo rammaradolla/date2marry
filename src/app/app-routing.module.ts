@@ -4,13 +4,15 @@ import { LandingPageComponent } from "./components/landing-page/landing-page.com
 import { TestComponent } from "./test/test.component";
 import { CreateAccountComponent } from "./components/create-account/create-account.component";
 import { SigninComponent } from "./components/signin/signin.component";
+import { UsersListComponent } from "./components/users-list/users-list.component";
 
 const routes: Routes = [
   { path: "", redirectTo: "/home", pathMatch: "full" },
   { path: "home", component: LandingPageComponent },
   { path: "details", component: TestComponent },
   { path: "createAccount", component: CreateAccountComponent },
-  { path: "signin", component: SigninComponent }
+  { path: "signin", component: SigninComponent },
+  { path: "usersList", component: UsersListComponent }
 ];
 
 @NgModule({

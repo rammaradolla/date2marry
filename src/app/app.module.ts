@@ -25,6 +25,7 @@ import {
 } from "angular-6-social-login";
 import { GoogleSigninComponent } from './components/google-signin/google-signin.component';
 import { SigninComponent } from './components/signin/signin.component';
+import { UsersListComponent } from './components/users-list/users-list.component';
 
 
 // Configs 
@@ -51,7 +52,8 @@ export function getAuthServiceConfigs() {
     CreateAccountComponent,
     LogoComponent,
     GoogleSigninComponent,
-    SigninComponent
+    SigninComponent,
+    UsersListComponent
   ],
   imports: [
     BrowserModule,

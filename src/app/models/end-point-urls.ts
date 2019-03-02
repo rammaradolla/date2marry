@@ -3,4 +3,5 @@ export class EndPointUrls {
   usersFullProfile: string;
   getUserPhotoIds: string;
   userSave: string;
+  getUsersList: string;
 }

@@ -36,6 +36,8 @@ export class ApiCallingService {
       endPointUrls.usersFullProfile = "http://localhost:3000/usersFullProfile";
       endPointUrls.getUserPhotoIds = "http://localhost:3000/getUserPhotoIds";
       endPointUrls.userSave = "http://localhost:8082/user/save";
+      endPointUrls.getUsersList = `http://localhost:8082/user/users/`;
+
       return endPointUrls;
     } else {
       endPointUrls.users = "https://api.anastasiadate.com/v2/smiles/users";
@@ -82,6 +84,21 @@ export class ApiCallingService {
   saveUser(user): Observable<{}> {
     return this.httpClient
       .post<{}>(this.getEndPointUrls().userSave, user, this.basicHttpOptions)
+      .pipe(
+        tap(response => console.log("user save response", response)),
+        catchError(this.handleError("data", {}))
+      );
+  }
+
+  /**
+   * Function to get users list
+   */
+  getUsersList(start, count): Observable<{}> {
+    return this.httpClient
+      .get<{}>(
+        this.getEndPointUrls().getUsersList + `${start}/${count}`,
+        this.basicHttpOptions
+      )
       .pipe(
         tap(response => console.log("user save response", response)),
         catchError(this.handleError("data", {}))
