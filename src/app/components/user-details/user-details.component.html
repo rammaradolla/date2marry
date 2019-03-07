@@ -1,7 +1,31 @@
 <div class="page">
   <div class="container">
     <div class="row">
-      <div class="col-lg-3"></div>
+      <div class="col-lg-3">
+        <button mat-raised-button color="primary" class="subscribe-btn">
+          Subscribe
+        </button>
+        <div class="left-nav">
+          <h2 class="mat-h2 label">Emails</h2>
+          <button mat-button color="primary">Inbox</button>
+          <button mat-button color="primary">Sent Mail</button>
+          <button mat-button color="primary">Deleted Mail</button>
+          <button mat-button color="primary">Compose New Email</button>
+
+          <h2 class="mat-h2 label">Ladies</h2>
+          <button mat-button color="primary">Online Ladies</button>
+          <button mat-button color="primary">My Contact List</button>
+          <button mat-button color="primary">Search</button>
+
+          <h2 class="mat-h2 label">Services</h2>
+          <button mat-button color="primary">Features</button>
+          <button mat-button color="primary">Live Chat</button>
+          <button mat-button color="primary">CamShare</button>
+          <button mat-button color="primary">Virtual Gifts</button>
+          <button mat-button color="primary">Flowers & Presents</button>
+          <button mat-button color="primary">Call Me</button>
+        </div>
+      </div>
       <div class="col-lg-9">
         <div class="container">
           <div class="row">
@@ -304,7 +328,97 @@
                     </div>
                   </div>
                 </div>
-                <div class="row"></div>
+                <div class="row">
+                  <div class="col-lg-6">
+                    <div class="mat-body-2">
+                      <div class="label">
+                        Character
+                      </div>
+                      One thing I am absolutely certain, I can’t live this life
+                      without love, tenderness and passion. All I want is to
+                      love and to express my affection, tenderness and caress to
+                      my sunshine whom I’ll definitely find soon. I’m a little
+                      curious woman, who believes that true love exists! I’m
+                      very honest and trustful. I’m energetic and purposeful. I
+                      think one will just see everything in my eyes, so I will
+                      not lie :-) I like experiments. I can present myself in
+                      different images. Oh, yeah! I don’t have any complexes! It
+                      helps me in my life, especially in a relationship. I like
+                      to open something new for myself and my partner. I can’t
+                      imagine a day in my life without joy and laughter. The
+                      sense of humor and love for life helps me to go along life
+                      easily and happily having a big smile on my face! I love
+                      to enrich my life with emotions, happy moments and
+                      enjoyment!
+
+                      <div class="label">
+                        Interests
+                      </div>
+                      I like to keep myself fit. I like lady’s kinds of sport.
+                      Hard training is not for me :-) Cooking is my big passion.
+                      I love making unforgettable breakfasts and romantic
+                      dinners! I enjoy making pleasant surprises and having
+                      exciting and various weekends. Travelling even on a shirt
+                      trip is the best plan for me. I’m very creative and I
+                      dream to realize all my romantic fantasies, which I have
+                      on my mind.
+
+                      <div class="label">
+                        Her Type of Man
+                      </div>
+                      I’m very tender lady. It’s very easy to break my heart.
+                      So, I want my man to be very gentle with me. I want to
+                      feel myself little and absolutely undefended girl in his
+                      embrace. I want to wake up in the morning feeling his
+                      sweet kisses and fall asleep feeling his soft touch. My
+                      man will always feel how much I need and love him!I’d love
+                      to enrich my relationship with openness, loyalty, rela
+                      care and honesty.
+                    </div>
+                  </div>
+                  <div class="col-lg-6">
+                    <mat-card class="example-card">
+                      <img
+                        mat-card-image
+                        src="assets/photosNew/userId2/userId2-1.jpeg"
+                        alt="Photo of a Shiba Inu"
+                      />
+                    </mat-card>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="photos-grid">
+                    <mat-card
+                      class="example-card"
+                      *ngFor="
+                        let item of [
+                          1,
+                          2,
+                          3,
+                          4,
+                          5,
+                          6,
+                          7,
+                          8,
+                          9,
+                          10,
+                          11,
+                          12,
+                          13,
+                          14
+                        ];
+                        let i = index
+                      "
+                    >
+                      <img
+                        mat-card-image
+                        src="assets/photosNew/userId1/userId1-{{ item }}.jpeg"
+                        onerror="this.src='assets/fake-thumb.jpg'"
+                        alt="Photo of a Shiba Inu"
+                      />
+                    </mat-card>
+                  </div>
+                </div>
               </mat-tab>
               <mat-tab label="Photos"> </mat-tab>
               <mat-tab label="Videos"> </mat-tab>

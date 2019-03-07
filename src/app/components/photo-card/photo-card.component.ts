@@ -55,11 +55,11 @@ export class PhotoCardComponent implements OnInit {
 
   ngOnInit() {}
 
-  get userProfile(): UserProfile {
+  get userProfile(): User {
     return this._userProfile;
   }
   @Input("userProfile")
-  set userProfile(userProfile: UserProfile) {
+  set userProfile(userProfile: User) {
     this._userProfile = userProfile;
     this.setImageUrlArray();
   }
