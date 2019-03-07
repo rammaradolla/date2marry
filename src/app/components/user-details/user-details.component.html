@@ -1,0 +1,319 @@
+<div class="page">
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-3"></div>
+      <div class="col-lg-9">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-6">
+              <p class="mat-h2">{{ selectedUser?.name }}'s Profile</p>
+              <div class="row">
+                <div class="col-lg-4">
+                  <mat-card class="example-card">
+                    <img
+                      mat-card-image
+                      src="assets/photos/1-1/8.jpg"
+                      alt="Photo of a Shiba Inu"
+                    />
+                  </mat-card>
+                </div>
+                <div class="col-lg-8">
+                  <div class="mat-body-strong">{{ selectedUser?.name }}</div>
+                  <div class="mat-body-strong">
+                    ID:&nbsp;&nbsp; {{ selectedUser?.id }}
+                  </div>
+                  <div>
+                    <button mat-button class="small-btn">
+                      <mat-icon
+                        color="primary"
+                        aria-label="Example icon-button with a heart icon"
+                        >duo</mat-icon
+                      >&nbsp;CamShare
+                    </button>
+                  </div>
+                  <div>
+                    <button mat-button class="small-btn">
+                      <mat-icon
+                        color="primary"
+                        aria-label="Example icon-button with a heart icon"
+                        >chat</mat-icon
+                      >&nbsp;Live Chat
+                    </button>
+                  </div>
+                  <div>
+                    <button mat-button class="small-btn">
+                      <mat-icon
+                        color="primary"
+                        aria-label="Example icon-button with a heart icon"
+                        >card_giftcard</mat-icon
+                      >&nbsp;Send Virtual Gift
+                    </button>
+                  </div>
+                  <div>
+                    <button mat-button class="small-btn">
+                      <mat-icon
+                        color="primary"
+                        aria-label="Example icon-button with a heart icon"
+                        >star</mat-icon
+                      >&nbsp;Add to Contact List
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="row">
+                <div class="col-lg-6">
+                  <button mat-stroked-button color="primary" class="big-btn">
+                    <mat-icon aria-label="Example icon-button with a heart icon"
+                      >email</mat-icon
+                    >&nbsp;Email Me
+                  </button>
+                  <button mat-stroked-button color="primary" class="big-btn">
+                    <mat-icon aria-label="Example icon-button with a heart icon"
+                      >card_giftcard</mat-icon
+                    >&nbsp;Virtual Gifts
+                  </button>
+                  <button mat-stroked-button color="primary" class="big-btn">
+                    <mat-icon aria-label="Example icon-button with a heart icon"
+                      >chat</mat-icon
+                    >&nbsp;Live Chat
+                  </button>
+                </div>
+                <div class="col-lg-6">
+                  <button mat-stroked-button color="primary" class="big-btn">
+                    <mat-icon aria-label="Example icon-button with a heart icon"
+                      >phone</mat-icon
+                    >&nbsp;Call Me
+                  </button>
+                  <button mat-stroked-button color="primary" class="big-btn">
+                    <mat-icon aria-label="Example icon-button with a heart icon"
+                      >local_florist</mat-icon
+                    >&nbsp;Flowers
+                  </button>
+                  <button mat-stroked-button color="primary" class="big-btn">
+                    <mat-icon aria-label="Example icon-button with a heart icon"
+                      >duo</mat-icon
+                    >&nbsp;CamShare
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br />
+          <div class="row">
+            <mat-tab-group dynamicHeight class="user-details-tab-group">
+              <mat-tab label="Profile">
+                <div class="row">
+                  <div class="col-lg-6">
+                    <mat-card class="example-card">
+                      <img
+                        mat-card-image
+                        src="assets/photosNew/userId2/userId2-5.jpeg"
+                        alt="Photo of a Shiba Inu"
+                      />
+                    </mat-card>
+                  </div>
+                  <div class="col-lg-1"></div>
+                  <div class="col-lg-5">
+                    <div class="row">
+                      <div class="col-lg-6">
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Age
+                          </div>
+                          <div>
+                            {{ selectedUser?.age ? selectedUser.age : "27" }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Birthday
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.dateOfBirth
+                                ? selectedUser.dateOfBirth
+                                : "08/19/1987"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Eye Color
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.eyeColor
+                                ? selectedUser.userProfile.eyeColor
+                                : "Brown"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Hair Color
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.hairColor
+                                ? selectedUser.userProfile.hairColor
+                                : "Brown"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Height
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.height
+                                ? selectedUser.userProfile.height
+                                : "5.8"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Body Type
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.bodyType
+                                ? selectedUser.userProfile.bodyType
+                                : "Slim"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Marital Status
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.maritalStatus
+                                ? selectedUser.userProfile.maritalStatus
+                                : "Divorced"
+                            }}
+                          </div>
+                        </div>
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Children
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.children
+                                ? selectedUser.userProfile.children
+                                : "Son"
+                            }}
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-lg-6">
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Level of Education
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.education
+                                ? selectedUser.userProfile.education
+                                : "Masters"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Occupation
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.occupation
+                                ? selectedUser.userProfile.occupation
+                                : "Policewoman"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Drinking
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.drinkingType
+                                ? selectedUser.userProfile.drinkingType
+                                : "Occasionally"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Smoking
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.isSmoker
+                                ? selectedUser.userProfile.isSmoker
+                                : "Occasionally"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Level of English
+                          </div>
+                          <div>
+                            {{
+                              selectedUser?.userProfile?.smoking
+                                ? selectedUser.userProfile.smoking
+                                : "Occasionally"
+                            }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Age
+                          </div>
+                          <div>
+                            {{ selectedUser?.age ? selectedUser.age : "27" }}
+                          </div>
+                        </div>
+
+                        <div class="profile-attribute">
+                          <div class="body-2" class="profile-label">
+                            Age
+                          </div>
+                          <div>
+                            {{ selectedUser?.age ? selectedUser.age : "27" }}
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="row"></div>
+              </mat-tab>
+              <mat-tab label="Photos"> </mat-tab>
+              <mat-tab label="Videos"> </mat-tab>
+              <mat-tab label="Interview"> </mat-tab>
+              <mat-tab label="Letters"> </mat-tab>
+            </mat-tab-group>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

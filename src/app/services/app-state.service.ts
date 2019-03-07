@@ -1,12 +1,15 @@
-import { Injectable } from '@angular/core';
-import { UserProfileSummary } from '../models/userProfileSummary';
-import { UserProfile } from '../models/userProfile';
+import { Injectable } from "@angular/core";
+import { UserProfileSummary } from "../models/userProfileSummary";
+import { UserProfile } from "../models/userProfile";
+import { User } from "../models/userModel";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class AppStateService {
   usersProfileSummary: UserProfileSummary[];
   usersProfile: UserProfile[];
-  constructor() { }
+  onlineUsers: User[];
+  selectedUser: User;
+  constructor() {}
 }

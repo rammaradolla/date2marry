@@ -1,0 +1,15 @@
+<div class="page-container">
+  <div
+    class="photo-gallary-grid"
+    gdAria
+    gdColumns="repeat(auto-fill, minmax(250px, auto))"
+    gdGap="1em"
+  >
+    <app-photo-card
+      *ngFor="let onlineUser of onlineUsers; let i = index"
+      [userProfile]="onlineUser"
+      [userIndex]="i"
+      (click)="onUserSelect(onlineUser)"
+    ></app-photo-card>
+  </div>
+</div>

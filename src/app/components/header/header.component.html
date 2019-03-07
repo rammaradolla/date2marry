@@ -1,6 +1,16 @@
-<header class="header" *ngIf="router.url != '/createAccount'">
+<header
+  class="header"
+  *ngIf="
+    router.url != '/createAccount' &&
+    router.url != '/signin' &&
+    router.url != '/'
+  "
+>
   <!-- <div class="logo-container">  -->
-      <span class="logo"><span class="date-string">Date</span><span class="to">2</span><span class="marry-string">Marry</span></span>
+  <span class="logo"
+    ><span class="date-string">Date</span><span class="to">2</span
+    ><span class="marry-string">Marry</span></span
+  >
   <!-- </div> -->
   <app-menubar class="memubar-component"></app-menubar>
 </header>

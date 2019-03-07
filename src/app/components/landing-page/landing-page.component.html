@@ -1,5 +1,14 @@
 <div class="page-container">
-  <div class="photo-gallary-grid" gdAria gdColumns="repeat(auto-fill, minmax(200px, auto))"  gdGap="1em">
-    <app-photo-card *ngFor="let userProfile of usersProfile" [userProfile]="userProfile"></app-photo-card>
+  <div
+    class="photo-gallary-grid"
+    gdAria
+    gdColumns="repeat(auto-fill, minmax(250px, auto))"
+    gdGap="1em"
+  >
+    <app-photo-card
+      *ngFor="let userProfile of usersProfile; let i = index"
+      [userProfile]="userProfile"
+      [userIndex]="i"
+    ></app-photo-card>
   </div>
 </div>

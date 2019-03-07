@@ -4,4 +4,6 @@ export class EndPointUrls {
   getUserPhotoIds: string;
   userSave: string;
   getUsersList: string;
+  onlineUsersList;
+  string;
 }

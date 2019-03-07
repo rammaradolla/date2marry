@@ -1,21 +1,26 @@
-import { Component, OnInit, Input, ViewChild } from '@angular/core';
-import { IImage } from 'ng-simple-slideshow';
-import { AppStateService } from '../../services/app-state.service';
-import { ApiCallingService } from '../../services/api-calling.service';
-import { UserProfile } from '../../models/userProfile';
+import { Component, OnInit, Input, ViewChild } from "@angular/core";
+import { IImage } from "ng-simple-slideshow";
+import { AppStateService } from "../../services/app-state.service";
+import { ApiCallingService } from "../../services/api-calling.service";
+import { UserProfile } from "../../models/userProfile";
+import { Router } from "@angular/router";
+import { User } from "../../models/userModel";
 
 @Component({
-  selector: 'app-photo-card',
-  templateUrl: './photo-card.component.html',
-  styleUrls: ['./photo-card.component.scss']
+  selector: "app-photo-card",
+  templateUrl: "./photo-card.component.html",
+  styleUrls: ["./photo-card.component.scss"]
 })
-
 export class PhotoCardComponent implements OnInit {
-
-  constructor(private apiCallingService:ApiCallingService, private appStateService: AppStateService) { }
+  constructor(
+    private apiCallingService: ApiCallingService,
+    private appStateService: AppStateService,
+    private router: Router
+  ) {}
   @Input() photoUrl: String;
-  @ViewChild('slideshow') slideshow: any;
-  _userProfile: UserProfile;
+  @Input() userIndex: number;
+  @ViewChild("slideshow") slideshow: any;
+  _userProfile: User;
   photoIds: number[];
 
   // imageUrls: (string | IImage)[] = [
@@ -26,63 +31,53 @@ export class PhotoCardComponent implements OnInit {
   //   { url: 'assets/kitties.jpg', backgroundSize: 'contain', backgroundPosition: 'center' }
   // ];
 
-  imageUrls: (string | IImage)[]= [];
-  height: string = '300px';
+  imageUrls: (string | IImage)[] = [];
+  height: string = "300px";
   minHeight: string;
-  arrowSize: string = '20px';
+  arrowSize: string = "20px";
   showArrows: boolean = true;
   disableSwiping: boolean = false;
   autoPlay: boolean = false;
   autoPlayInterval: number = 3333;
   stopAutoPlayOnSlide: boolean = true;
   debug: boolean = false;
-  backgroundSize: string = 'cover';
-  backgroundPosition: string = 'center center';
-  backgroundRepeat: string = 'no-repeat';
+  backgroundSize: string = "cover";
+  backgroundPosition: string = "center center";
+  backgroundRepeat: string = "no-repeat";
   showDots: boolean = true;
-  dotColor: string = '#FFF';
+  dotColor: string = "#FFF";
   showCaptions: boolean = true;
-  captionColor: string = '#FFF';
-  captionBackground: string = 'rgba(0, 0, 0, .35)';
+  captionColor: string = "#FFF";
+  captionBackground: string = "rgba(0, 0, 0, .35)";
   lazyLoad: boolean = false;
   hideOnNoSlides: boolean = false;
-  width: string = '100%';
+  width: string = "100%";
 
-  ngOnInit() {
+  ngOnInit() {}
 
+  get userProfile(): UserProfile {
+    return this._userProfile;
+  }
+  @Input("userProfile")
+  set userProfile(userProfile: UserProfile) {
+    this._userProfile = userProfile;
+    this.setImageUrlArray();
   }
 
+  setImageUrlArray() {
+    [1, 2, 3, 4, 5].forEach((item, index) => {
+      let photoObj = {
+        url: `assets/photosNew/userId${this.userIndex % 10}/userId${this
+          .userIndex % 10}-${index + 1}.jpeg`,
+        ccaption: "The first slide",
+        href: "#config"
+      };
+      this.imageUrls.push(photoObj);
+    });
+  }
 
-get userProfile(): UserProfile {
-    return this._userProfile;
-}
-@Input('userProfile')
-set userProfile(userProfile: UserProfile) {
-    this._userProfile = userProfile;
-    this.getPhotoIds();
-}
-
-getPhotoIds() {
-  this.apiCallingService.getPhotoIds(this._userProfile.id)
-  .subscribe((photoIds:number[]) => {
-    this.photoIds = photoIds;
-    this.setImageUrlArray(photoIds);
-  });
- }
-
-setImageUrlArray(photoIds) {
-  photoIds.forEach((photoId, index )=> {
-  let photoObj = {
-      url: `assets/photos/${this._userProfile.id}/${photoId}.jpeg`,
-      ccaption: 'The first slide', 
-      href: '#config'
-    }
-     this.imageUrls.push(photoObj);
-  });
-}
-
-onSlide(photoIndex) {
-  // alert(photoIndex);
-}
-
+  onClick() {
+    this.appStateService.selectedUser = this._userProfile;
+    this.router.navigate(["userDetails"]);
+  }
 }

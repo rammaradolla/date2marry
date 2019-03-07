@@ -1,0 +1,59 @@
+<div class="signin-page">
+  <mat-card class="signin-card">
+    <app-logo class="logo"></app-logo>
+    <app-google-signin></app-google-signin>
+    <div class="row divider">
+      <hr />
+      <span>or sign in below</span>
+      <hr />
+    </div>
+    <!-- <mat-card-content> -->
+    <form [formGroup]="signinForm">
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ constantsService.labels?.userName }}</mat-label>
+          <input
+            matInput
+            placeholder="UserName"
+            formControlName="userName"
+            required
+          />
+          <mat-error *ngIf="signinForm.controls.userName.errors?.required">{{
+            constantsService.errorMessages.required?.userName
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+
+      <div>
+        <mat-form-field appearance="outline">
+          <mat-label>{{ constantsService.labels?.password }}</mat-label>
+          <input
+            matInput
+            placeholder="Password"
+            formControlName="password"
+            required
+          />
+          <mat-error *ngIf="signinForm.controls.password.errors?.required">{{
+            constantsService.errorMessages.required?.password
+          }}</mat-error>
+        </mat-form-field>
+      </div>
+      <mat-card-actions>
+        <div class="control-bar">
+          <button
+            mat-raised-button
+            color="primary"
+            class="signin-btn"
+            (click)="signin()"
+            [disabled]="!signinForm.valid"
+          >
+            {{ constantsService.labels?.signinBtn }}
+          </button>
+        </div>
+        <div class="control-bar">
+          <a routerLink="/createAccount">Create Account</a>
+        </div>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>

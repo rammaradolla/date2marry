@@ -26,6 +26,8 @@ import {
 import { GoogleSigninComponent } from './components/google-signin/google-signin.component';
 import { SigninComponent } from './components/signin/signin.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
+import { OnlineUsersComponent } from './components/online-users/online-users.component';
+import { UserDetailsComponent } from './components/user-details/user-details.component';
 
 
 // Configs 
@@ -53,7 +55,9 @@ export function getAuthServiceConfigs() {
     LogoComponent,
     GoogleSigninComponent,
     SigninComponent,
-    UsersListComponent
+    UsersListComponent,
+    OnlineUsersComponent,
+    UserDetailsComponent
   ],
   imports: [
     BrowserModule,
