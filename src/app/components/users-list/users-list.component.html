@@ -1,5 +1,14 @@
-<div class="users-list-page">
-  <div *ngFor="let user of usersList">
-    {{ user.id }}
+<div class="page-container container">
+  <div
+    class="photo-gallary-grid"
+    gdAria
+    gdColumns="repeat(auto-fill, minmax(250px, auto))"
+    gdGap="1em"
+  >
+    <app-photo-card
+      *ngFor="let user of usersList; let i = index"
+      [userProfile]="user"
+      [userIndex]="i"
+    ></app-photo-card>
   </div>
 </div>

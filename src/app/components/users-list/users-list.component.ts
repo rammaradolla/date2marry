@@ -18,7 +18,7 @@ export class UsersListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getUsersList(1, 5);
+    this.getUsersList(1, 20);
   }
   getUsersList(start, count) {
     this.apiCallingService
@@ -26,13 +26,6 @@ export class UsersListComponent implements OnInit {
       .subscribe((usersList: User[]) => {
         this.usersList = usersList;
         console.log(JSON.stringify(usersList));
-        this.snackBar.open(
-          this.constantsService.messages.accountCreation.success,
-          "Ok",
-          {
-            duration: 3000
-          }
-        );
       });
   }
 }

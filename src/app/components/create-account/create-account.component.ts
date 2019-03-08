@@ -5,6 +5,8 @@ import { ConstantsService } from "../../services/constants.service";
 import { ApiCallingService } from "../../services/api-calling.service";
 import { User } from "../../models/userModel";
 import { MatSnackBar } from "@angular/material";
+import { AppStateService } from "../../services/app-state.service";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-create-account",
@@ -16,7 +18,9 @@ export class CreateAccountComponent implements OnInit {
     private fb: FormBuilder,
     public constantsService: ConstantsService,
     private apiCallingService: ApiCallingService,
-    private snackBar: MatSnackBar
+    private snackBar: MatSnackBar,
+    private appStateService: AppStateService,
+    private router: Router
   ) {}
 
   createAccountForm = this.fb.group({
@@ -34,12 +38,16 @@ export class CreateAccountComponent implements OnInit {
       .subscribe((user: User) => {
         console.log(JSON.stringify(user));
         this.snackBar.open(
-          this.constantsService.messages.accountCreation.success,
+          `${
+            this.constantsService.messages.accountCreation.success
+          }, User Id: ${user.id}`,
           "Ok",
           {
-            duration: 3000
+            duration: 6000
           }
         );
+        this.appStateService.loggedInUser = user;
+        this.router.navigate(["onlineUsers"]);
       });
   }
 }

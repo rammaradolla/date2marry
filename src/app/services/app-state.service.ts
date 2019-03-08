@@ -11,5 +11,6 @@ export class AppStateService {
   usersProfile: UserProfile[];
   onlineUsers: User[];
   selectedUser: User;
+  loggedInUser: User;
   constructor() {}
 }

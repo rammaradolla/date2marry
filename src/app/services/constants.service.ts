@@ -47,6 +47,9 @@ export class ConstantsService {
   messages = {
     accountCreation: {
       success: "User account has been created successfully"
+    },
+    signin: {
+      success: "User signed in successfully"
     }
   };
 }

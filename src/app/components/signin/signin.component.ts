@@ -6,6 +6,7 @@ import { ApiCallingService } from "../../services/api-calling.service";
 import { User } from "../../models/userModel";
 import { MatSnackBar } from "@angular/material";
 import { Router } from "@angular/router";
+import { AppStateService } from "../../services/app-state.service";
 
 @Component({
   selector: "app-signin",
@@ -18,7 +19,8 @@ export class SigninComponent implements OnInit {
     public constantsService: ConstantsService,
     private apiCallingService: ApiCallingService,
     private snackBar: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private appStateService: AppStateService
   ) {}
 
   signinForm = this.fb.group({
@@ -26,8 +28,16 @@ export class SigninComponent implements OnInit {
     password: ["", Validators.required]
   });
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.appStateService.loggedInUser = null;
+  }
   signin() {
-    this.router.navigate(["home"]);
+    const user = new User();
+    user.firstName = this.signinForm.value.userName;
+    this.snackBar.open(this.constantsService.messages.signin.success, "Ok", {
+      duration: 3000
+    });
+    this.appStateService.loggedInUser = user;
+    this.router.navigate(["onlineUsers"]);
   }
 }

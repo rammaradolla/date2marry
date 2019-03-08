@@ -28,6 +28,7 @@ import { SigninComponent } from './components/signin/signin.component';
 import { UsersListComponent } from './components/users-list/users-list.component';
 import { OnlineUsersComponent } from './components/online-users/online-users.component';
 import { UserDetailsComponent } from './components/user-details/user-details.component';
+import { UserSettingsComponent } from './components/user-settings/user-settings.component';
 
 
 // Configs 
@@ -57,7 +58,8 @@ export function getAuthServiceConfigs() {
     SigninComponent,
     UsersListComponent,
     OnlineUsersComponent,
-    UserDetailsComponent
+    UserDetailsComponent,
+    UserSettingsComponent
   ],
   imports: [
     BrowserModule,

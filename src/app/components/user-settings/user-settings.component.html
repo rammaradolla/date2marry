@@ -1,0 +1,10 @@
+<div *ngIf="appStateService.loggedInUser">
+  Welcome {{ appStateService.loggedInUser?.firstName }}
+  <div><a mat-button routerLink="/signin">Logout</a></div>
+</div>
+<div *ngIf="!appStateService.loggedInUser">
+  <div><a routerLink="/signin">Sign In</a></div>
+  <div>
+    <a routerLink="/createAccount">Create Account</a>
+  </div>
+</div>

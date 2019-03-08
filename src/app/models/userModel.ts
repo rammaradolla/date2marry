@@ -1,4 +1,4 @@
-export interface PictureList {
+export class PictureList {
   id: string;
   isActive: boolean;
   isOnRequest: boolean;
@@ -8,7 +8,7 @@ export interface PictureList {
   userId: string;
 }
 
-export interface VideoList {
+export class VideoList {
   id: string;
   isActive: boolean;
   isOnRequest: boolean;
@@ -18,7 +18,7 @@ export interface VideoList {
   userId: string;
 }
 
-export interface UserAccount {
+export class UserAccount {
   businessType: string;
   credits: number;
   enabled: boolean;
@@ -26,38 +26,38 @@ export interface UserAccount {
   videoList: VideoList[];
 }
 
-export interface ChildList {
+export class ChildList {
   age: number;
   dateOfBirth: Date;
   id: string;
   isFemale: boolean;
 }
 
-export interface Country {
+export class Country {
   id: string;
   name: string;
   shortName: string;
 }
 
-export interface FirstLanguage {
+export class FirstLanguage {
   country: Country;
   id: string;
   name: string;
 }
 
-export interface Country2 {
+export class Country2 {
   id: string;
   name: string;
   shortName: string;
 }
 
-export interface SecondLanguage {
+export class SecondLanguage {
   country: Country2;
   id: string;
   name: string;
 }
 
-export interface UserProfile {
+export class UserProfile {
   aboutYourself: string;
   childList: ChildList[];
   drinkingType: string;
@@ -75,7 +75,7 @@ export interface UserProfile {
   weight: number;
 }
 
-export interface User {
+export class User {
   age: number;
   agentId: string;
   dateOfBirth: Date;
