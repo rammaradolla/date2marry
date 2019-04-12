@@ -1,15 +1,20 @@
 .signin-page {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   display: grid;
   grid-template-columns: 100px 402px auto 280px;
   grid-template-rows: auto 450px auto;
-  background-color: #cccccc;
-  background: url("/assets/create-account/1.jpeg") no-repeat center center fixed;
+  background-image: url("/assets/create-account/1.jpeg");
+  background-position: center center;
+  background-attachment: fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
   background-size: cover;
+  background-color: #333;
+  margin: 0;
+  padding: 0;
+
   .signin-card {
     grid-column-start: 2;
     grid-column-end: 3;

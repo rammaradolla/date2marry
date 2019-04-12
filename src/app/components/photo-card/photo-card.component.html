@@ -1,8 +1,8 @@
 <mat-card class="photo-card">
   <mat-card-header (click)="onClick()">
     <div mat-card-avatar class="photo-header-image"></div>
-    <mat-card-title>Shiba Inu</mat-card-title>
-    <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+    <mat-card-title>{{ userProfile.firstName }}</mat-card-title>
+    <mat-card-subtitle>{{ userProfile.lastName }}</mat-card-subtitle>
   </mat-card-header>
   <!-- <img mat-card-image [src]="photoUrl" alt="Photo of a Shiba Inu"> -->
   <!-- <slideshow #slideshow [imageUrls]="imageUrlArray"></slideshow> -->

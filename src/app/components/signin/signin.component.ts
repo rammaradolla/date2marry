@@ -34,6 +34,11 @@ export class SigninComponent implements OnInit {
   signin() {
     const user = new User();
     user.firstName = this.signinForm.value.userName;
+    user.lastName = "";
+    user.id = user.firstName.substring(user.firstName.length - 1);
+    user.profilePicSmallUrl = `assets/img/portrait/small/avatar-s-${
+      user.id
+    }.png`;
     this.snackBar.open(this.constantsService.messages.signin.success, "Ok", {
       duration: 3000
     });

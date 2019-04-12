@@ -37,7 +37,8 @@ export class ApiCallingService {
       endPointUrls.getUserPhotoIds = "http://localhost:3000/getUserPhotoIds";
       endPointUrls.userSave = "http://localhost:8082/user/save";
       endPointUrls.getUsersList = `http://localhost:8082/user/users/`;
-      endPointUrls.onlineUsersList = `http://localhost:8082/user/femaleOnlineUsers/`;
+      // endPointUrls.onlineUsersList = `http://localhost:8082/user/femaleOnlineUsers/`;
+      endPointUrls.onlineUsersList = `http://localhost:3000/femaleOnlineUsers`;
 
       return endPointUrls;
     } else {
@@ -110,11 +111,18 @@ export class ApiCallingService {
    * Get online users list
    */
   getOnlineUsers(start, count): Observable<{}> {
+    // return this.httpClient
+    //   .get<{}>(
+    //     this.getEndPointUrls().onlineUsersList + `${start}/${count}`,
+    //     this.basicHttpOptions
+    //   )
+    //   .pipe(
+    //     tap(response => console.log("online users response", response)),
+    //     catchError(this.handleError("data", {}))
+    //   );
+
     return this.httpClient
-      .get<{}>(
-        this.getEndPointUrls().onlineUsersList + `${start}/${count}`,
-        this.basicHttpOptions
-      )
+      .get<{}>(this.getEndPointUrls().onlineUsersList, this.basicHttpOptions)
       .pipe(
         tap(response => console.log("online users response", response)),
         catchError(this.handleError("data", {}))

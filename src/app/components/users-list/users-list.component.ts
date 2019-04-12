@@ -18,7 +18,7 @@ export class UsersListComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.getUsersList(1, 20);
+    this.getUsersList(1, 30);
   }
   getUsersList(start, count) {
     this.apiCallingService
