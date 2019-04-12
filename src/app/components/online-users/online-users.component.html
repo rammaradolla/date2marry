@@ -9,7 +9,7 @@
       *ngFor="let onlineUser of onlineUsers; let i = index"
       [userProfile]="onlineUser"
       [userIndex]="i"
-      (click)="onUserSelect(onlineUser)"
+      (click)="onUserSelect(onlineUser); $event.preventDefault()"
     ></app-photo-card>
   </div>
 </div>

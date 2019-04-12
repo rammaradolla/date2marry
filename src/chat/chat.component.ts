@@ -38,10 +38,7 @@ export class ChatComponent implements OnInit {
       console.log("step1 user connected successfully");
       this.chatService.mapSocketWithUser(this.appStateService.loggedInUser);
     });
-    // var hElement: HTMLElement = this.elRef.nativeElement;
-    // var element = hElement.getElementsByClassName("list-group-item")[0];
-    // var ele2 = $(".list-group-item")[0];
-    // $(".list-group-item")[0].click();
+
     this.chatService
       .getChatHistory(this.appStateService.loggedInUser.id)
       .subscribe((userChatHistory: UserChatHistory) => {

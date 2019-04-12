@@ -10,7 +10,8 @@
 @include mat-core();
 
 // Define the default theme.
-$brand-editor-primary: mat-palette($mat-purple);
+// $brand-editor-primary: mat-palette($mat-purple);
+$brand-editor-primary: mat-palette($mat-blue, 900);
 $brand-editor-accent: mat-palette($mat-lime, A400);
 $brand-editor-warn: mat-palette($mat-red);
 $brand-editor-gray: mat-palette($mat-gray, 200);
